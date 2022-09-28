@@ -1,12 +1,12 @@
 import React from 'react';
-import {circle, cross} from "@/utils/blockConstructor"
+import {circle, cross, blockWidth, blockHeigth} from "../utils/blockConstructorUtils"
 
-function blockConstructor() {
+function BlockConstructor(props: {type: string}) {
   return (
-    <div>
+    <span style={{width: blockWidth, height: blockHeigth}} className="block-body">
       
-    </div>
+    </span>
   );
 }
 
-export default blockConstructor;
+export default BlockConstructor;
