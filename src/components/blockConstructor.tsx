@@ -1,11 +1,19 @@
 import React from 'react';
-import {circle, cross, blockWidth, blockHeigth} from "../utils/blockConstructorUtils"
+import {blockWidth, blockHeigth} from "../utils/blockConstructorUtils"
+import {ReactComponent as Circle} from "../SVGs/circle.svg"
+import {ReactComponent as Cross} from "../SVGs/cross.svg"
+function BlockConstructor(props: {type: string, callback?: () => void}) {
 
-function BlockConstructor(props: {type: string}) {
+  const clickHandler = () => {
+    if(props.type === "empty" && props.callback)
+      props.callback()
+  }
+
   return (
-    <span style={{width: blockWidth, height: blockHeigth}} className="block-body">
-      
-    </span>
+    <div style={{width: blockWidth, height: blockHeigth}} className="block-body" onClick={clickHandler}>
+      {props.type === "cross" && <Cross />}
+      {props.type === "circle" && <Circle />}
+    </div>
   );
 }
 
