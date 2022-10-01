@@ -56,9 +56,9 @@ function GameField() {
       callback={() => btnClick(rowIndex, i)}
       /> ) 
 
-    const submit = (pointsToWin: number) => {
-      setPointsToWin(pointsToWin)
-    }
+  const submit = (pointsToWin: number) => {
+    setPointsToWin(pointsToWin)
+  }
 
   return (
     <>
